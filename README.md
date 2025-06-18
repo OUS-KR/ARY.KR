@@ -5,20 +5,31 @@
 ### [사용자 등록](https://github.com/OUS-KR/ARY.KR/issues/new?template=01-user-register-by-issue.yml)
 
 - `ARY.KR/u/{사용자 아이디}` 주소 기반의 사용자 등록
-  - 사용자 예제: [ARY.KR/u/ary](https://ary.kr/u/ary) ([ARY.KR/@ary](https://ary.kr/@ary))
+  - 사용자 예제: [ARY.KR/u/ary](https://ary.kr/u/ary)
   - 사용자 등록 예제: https://github.com/OUS-KR/ARY.KR/issues/1
+- `ARY.KR/@{사용자 아이디}` 형태의 짧은 주소 지원
+  - 사용자 예제: [ARY.KR/@ary](https://ary.kr/@ary)
 
 ### [사용자 단축주소 생성](https://github.com/OUS-KR/ARY.KR/issues/new?template=02-user-short-url-register-by-issue.yml)
 
 - `ARY.KR/u/{사용자 아이디}/{단축 경로}` 형태의 단축주소 생성
-  - 사용자 단축주소 예제: [ARY.KR/u/ary/links/ary-kr](https://ary.kr/u/ary/links/ary-kr) ([ARY.KR/@ary/links/ary-kr](https://ary.kr/@ary/links/ary-kr))
+  - 사용자 단축주소 예제: [ARY.KR/u/ary/links/ary-kr](https://ary.kr/u/ary/links/ary-kr)
   - 사용자 단축주소 등록 예제: https://github.com/OUS-KR/ARY.KR/issues/2
+  - 동일한 단축 경로 존재 시 덮어쓰기
+- `ARY.KR/@{사용자 아이디}/{단축 경로}` 형태의 짧은 주소 지원
+  - 사용자 단축주소 예제: [ARY.KR/@ary/links/ary-kr](https://ary.kr/@ary/links/ary-kr)
+- 단축 경로가 `links`로 시작하면 `ARY.KR/@{사용자 아이디}/@{links를 제외한 단축 경로}` 형태로 생략 가능
+  - 사용자 단축주소 예제: [ARY.KR/@ary/@ary-kr](https://ary.kr/@ary/@ary-kr)
 
 ### [사용자 글 작성](https://github.com/OUS-KR/ARY.KR/issues/new?template=03-user-article-writing-by-issue.yml)
 
 - `ARY.KR/u/{사용자 아이디}/{글 경로}` 형태의 글 작성
-  - 사용자 글 예제: [ARY.KR/u/ary/articles/example](https://ary.kr/u/ary/articles/example) ([ARY.KR/@ary/articles/example](https://ary.kr/@ary/articles/example))
+  - 사용자 글 예제: [ARY.KR/u/ary/articles/example](https://ary.kr/u/ary/articles/example)
   - 사용자 글 작성 예제: https://github.com/OUS-KR/ARY.KR/issues/3
+  - 동일한 글 경로 존재 시 덮어쓰기
+  - 글 경로 미입력 시 `ARY.KR/u/{사용자 아이디}/` 페이지 수정
+- `ARY.KR/@{사용자 아이디}/{글 경로}` 형태의 짧은 주소 지원
+  - 사용자 글 예제: [ARY.KR/@ary/articles/example](https://ary.kr/@ary/articles/example)
  
 ### [사용자 메뉴 설정](https://github.com/OUS-KR/ARY.KR/issues/new?template=04-user-menu-setting-by-issue.yml)
 

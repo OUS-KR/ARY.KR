@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARY — ary.kr · The Suffix of Belonging</title>
+  <meta name="description" content="ary.kr — The domain of belonging, relation, and place. Exploring the suffix that forms adjectives, people, and sanctuaries from a single Latin root." />
+
+  <!-- Tailwind CSS 4.0 via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style type="text/tailwindcss">
+    @theme {
+      /* ── Color tokens — Manuscript & Archive palette ── */
+      --color-sepia-50:  #fdf6ec;
+      --color-sepia-100: #f8ecd4;
+      --color-sepia-200: #f0d4a8;
+      --color-sepia-300: #e4b878;
+      --color-sepia-400: #d49a50;
+      --color-sepia-500: #c4802a;
+      --color-sepia-600: #a86418;
+      --color-sepia-700: #8a4c10;
+      --color-sepia-800: #6c380a;
+      --color-sepia-900: #502808;
+
+      --color-archive-50:  #eef0ff;
+      --color-archive-100: #dce0ff;
+      --color-archive-200: #bcc4ff;
+      --color-archive-300: #96a0ff;
+      --color-archive-400: #6878f0;
+      --color-archive-500: #3840a8;
+      --color-archive-600: #2c3290;
+      --color-archive-700: #222678;
+      --color-archive-800: #181c60;
+      --color-archive-900: #101448;
+
+      --color-crimson-50:  #fff0f2;
+      --color-crimson-100: #ffdce0;
+      --color-crimson-200: #ffb8c0;
+      --color-crimson-300: #ff8090;
+      --color-crimson-400: #f04860;
+      --color-crimson-500: #a82838;
+      --color-crimson-600: #901828;
+      --color-crimson-700: #740e1c;
+      --color-crimson-800: #5a0812;
+      --color-crimson-900: #40040c;
+
+      --color-vellum-50:  #fdf8ec;
+      --color-vellum-100: #f8f0d8;
+      --color-vellum-200: #f0e4b8;
+      --color-vellum-300: #e4d090;
+      --color-vellum-400: #d4b868;
+      --color-vellum-500: #c0a048;
+      --color-vellum-600: #a08030;
+      --color-vellum-700: #80601c;
+      --color-vellum-800: #60440c;
+      --color-vellum-900: #443008;
+
+      --color-void-950: #060404;
+      --color-void-900: #0c0808;
+      --color-void-800: #121010;
+      --color-void-700: #1a1614;
+      --color-void-600: #241e1a;
+
+      /* ── Typography tokens ── */
+      --font-display: 'Cinzel Decorative', serif;
+      --font-serif:   'IM Fell English', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    @layer base {
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: #060404;
+        color: #ede8e0;
+        font-family: var(--font-body);
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: rgba(196,128,42,0.38);
+        color: #fdf6ec;
+      }
+    }
+
+    @layer components {
+
+      /* ── Canvas & Overlays ── */
+      .ary-canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .manuscript-grid {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(196,128,42,0.040) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(196,128,42,0.040) 1px, transparent 1px);
+        background-size: 72px 72px;
+      }
+      .archive-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background:
+          radial-gradient(ellipse 78% 54% at 12% 6%,  rgba(196,128,42,0.09)  0%, transparent 65%),
+          radial-gradient(ellipse 58% 48% at 88% 92%, rgba(56,64,168,0.07)   0%, transparent 60%),
+          radial-gradient(ellipse 44% 36% at 50% 50%, rgba(168,40,56,0.04)   0%, transparent 70%);
+      }
+      .vignette {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 38%, rgba(6,4,4,0.94) 100%);
+      }
+
+      /* ── Header ── */
+      .site-header {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 100;
+        padding: 0 2rem;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(6,4,4,0.80);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(196,128,42,0.18);
+      }
+      .logo-mark {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+      .logo-icon {
+        width: 36px; height: 36px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #c4802a 0%, #a82838 50%, #3840a8 100%);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-display);
+        font-size: 11px;
+        font-weight: 700;
+        color: #f8f0d8;
+        letter-spacing: 0.04em;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 16px rgba(196,128,42,0.24);
+      }
+      .logo-icon::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
+      }
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 17px;
+        font-weight: 400;
+        color: #e4b878;
+        letter-spacing: 0.10em;
+      }
+      .domain-badge {
+        padding: 4px 14px;
+        border-radius: 20px;
+        background: rgba(196,128,42,0.13);
+        border: 1px solid rgba(196,128,42,0.32);
+        font-size: 11px;
+        font-weight: 500;
+        color: #e4b878;
+        letter-spacing: 0.10em;
+        backdrop-filter: blur(8px);
+      }
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .nav-link {
+        font-size: 12px;
+        color: rgba(228,184,120,0.48);
+        text-decoration: none;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      .nav-link:hover { color: #e4b878; }
+
+      /* ── Hero ── */
+      .hero-section {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 2rem 80px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero-bg-text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: clamp(130px, 26vw, 340px);
+        font-weight: 700;
+        color: rgba(196,128,42,0.044);
+        letter-spacing: 0.12em;
+        pointer-events: none;
+        user-select: none;
+        animation: scrollDrift 22s ease-in-out infinite alternate;
+      }
+      @keyframes scrollDrift {
+        0%   { transform: scale(1.00) translateX(-1%); opacity: 0.70; }
+        50%  { transform: scale(1.03) translateX( 0%); opacity: 1.00; }
+        100% { transform: scale(1.06) translateX( 1%); opacity: 0.82; }
+      }
+
+      /* Manuscript seal ring */
+      .seal-ring {
+        position: absolute;
+        width: 360px; height: 360px;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .seal-ring::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(196,128,42,0.16);
+        animation: sealRotate 55s linear infinite;
+      }
+      .seal-ring::after {
+        content: '';
+        position: absolute;
+        inset: 28px;
+        border-radius: 50%;
+        border: 1px dashed rgba(168,40,56,0.12);
+        animation: sealRotate 35s linear infinite reverse;
+      }
+      @keyframes sealRotate {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 6px 18px;
+        border-radius: 24px;
+        border: 1px solid rgba(196,128,42,0.38);
+        background: rgba(196,128,42,0.09);
+        font-size: 10px;
+        font-weight: 600;
+        color: #e4b878;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        backdrop-filter: blur(8px);
+        position: relative;
+        z-index: 2;
+      }
+      .badge-dot {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: #c4802a;
+        animation: pulseDot 2.4s ease-in-out infinite;
+      }
+      @keyframes pulseDot {
+        0%,100% { transform: scale(1);   opacity: 1;   box-shadow: 0 0 0 0   rgba(196,128,42,0.45); }
+        50%      { transform: scale(1.6); opacity: 0.55; box-shadow: 0 0 0 7px rgba(196,128,42,0); }
+      }
+
+      .hero-suffix {
+        font-family: var(--font-display);
+        font-size: clamp(72px, 14vw, 180px);
+        font-weight: 700;
+        line-height: 0.88;
+        letter-spacing: 0.12em;
+        background: linear-gradient(135deg, #d49a50 0%, #c4802a 30%, #f8f0d8 65%, #a82838 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.25rem;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-suffix .dash {
+        -webkit-text-fill-color: rgba(212,154,80,0.28);
+      }
+
+      .hero-origin {
+        font-size: 12px;
+        color: rgba(228,184,120,0.38);
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-meaning {
+        font-family: var(--font-serif);
+        font-size: clamp(20px, 3vw, 34px);
+        font-style: italic;
+        color: #f0e4c0;
+        margin-bottom: 1.5rem;
+        max-width: 660px;
+        line-height: 1.48;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-quote {
+        font-size: 14px;
+        color: rgba(237,232,224,0.36);
+        max-width: 540px;
+        line-height: 1.84;
+        margin-bottom: 2.5rem;
+        font-style: italic;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-words {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+        max-width: 740px;
+        position: relative;
+        z-index: 2;
+      }
+      .word-pill {
+        padding: 5px 14px;
+        border-radius: 20px;
+        background: rgba(196,128,42,0.09);
+        border: 1px solid rgba(196,128,42,0.22);
+        font-size: 12px;
+        font-weight: 500;
+        color: #e4b878;
+        letter-spacing: 0.04em;
+        transition: all 0.25s;
+        cursor: default;
+      }
+      .word-pill:hover {
+        background: rgba(196,128,42,0.20);
+        border-color: rgba(228,184,120,0.45);
+        color: #f8f0d8;
+        transform: translateY(-2px);
+      }
+      .word-pill.archive { color:#96a0ff; border-color:rgba(56,64,168,0.28); background:rgba(56,64,168,0.08); }
+      .word-pill.archive:hover { background:rgba(56,64,168,0.18); border-color:rgba(150,160,255,0.50); color:#dce0ff; }
+      .word-pill.crimson { color:#ff8090; border-color:rgba(168,40,56,0.28); background:rgba(168,40,56,0.08); }
+      .word-pill.crimson:hover { background:rgba(168,40,56,0.18); border-color:rgba(255,128,144,0.50); color:#ffdce0; }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 13px 34px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #c4802a 0%, #a82838 50%, #3840a8 100%);
+        color: #f8f0d8;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s;
+        box-shadow: 0 4px 24px rgba(196,128,42,0.28);
+        position: relative;
+        z-index: 2;
+      }
+      .hero-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 38px rgba(168,40,56,0.34);
+      }
+
+      /* ── Stats ── */
+      .stats-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .stat-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+        background: rgba(196,128,42,0.055);
+        border: 1px solid rgba(196,128,42,0.14);
+        backdrop-filter: blur(12px);
+        transition: transform 0.3s;
+      }
+      .stat-card:hover { transform: translateY(-4px); }
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4.5vw, 48px);
+        font-weight: 700;
+        background: linear-gradient(135deg, #d49a50, #c4802a, #a82838);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .stat-label {
+        font-size: 11px;
+        color: rgba(228,184,120,0.42);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      /* ── Section common ── */
+      .section-label {
+        font-size: 10px;
+        color: rgba(196,128,42,0.52);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 4vw, 46px);
+        font-weight: 700;
+        color: #f0e4c0;
+        text-align: center;
+        margin-bottom: 0.6rem;
+        letter-spacing: 0.06em;
+      }
+      .section-subtitle {
+        font-size: 14px;
+        color: rgba(237,232,224,0.36);
+        text-align: center;
+        max-width: 480px;
+        margin: 0 auto 3rem;
+        line-height: 1.75;
+      }
+
+      /* ── Three Faces — Triple grid ── */
+      .triple-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .triple-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .face-card {
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        background: rgba(12,10,8,0.88);
+        backdrop-filter: blur(16px);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.30s;
+      }
+      .face-card.sepia  { border: 1px solid rgba(196,128,42,0.20); }
+      .face-card.indigo { border: 1px solid rgba(56,64,168,0.20); }
+      .face-card.ruby   { border: 1px solid rgba(168,40,56,0.20); }
+      .face-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        transition: opacity 0.3s;
+      }
+      .face-card.sepia::before  { background: linear-gradient(90deg, transparent, rgba(196,128,42,0.60), transparent); }
+      .face-card.indigo::before { background: linear-gradient(90deg, transparent, rgba(56,64,168,0.60), transparent); }
+      .face-card.ruby::before   { background: linear-gradient(90deg, transparent, rgba(168,40,56,0.60), transparent); }
+      .face-card:hover { transform: translateY(-4px); }
+      .face-card.sepia:hover  { box-shadow: 0 14px 44px rgba(196,128,42,0.10); border-color: rgba(212,154,80,0.36); }
+      .face-card.indigo:hover { box-shadow: 0 14px 44px rgba(56,64,168,0.10);  border-color: rgba(104,120,240,0.36); }
+      .face-card.ruby:hover   { box-shadow: 0 14px 44px rgba(168,40,56,0.10);  border-color: rgba(240,72,96,0.36); }
+
+      .face-pos {
+        font-size: 10px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+      .face-pos.sepia  { color: rgba(196,128,42,0.70); }
+      .face-pos.indigo { color: rgba(104,120,240,0.70); }
+      .face-pos.ruby   { color: rgba(240,72,96,0.70); }
+
+      .face-glyph {
+        font-family: var(--font-display);
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.02em;
+      }
+      .face-glyph.sepia  { background: linear-gradient(135deg, #d49a50, #c4802a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+      .face-glyph.indigo { background: linear-gradient(135deg, #96a0ff, #3840a8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+      .face-glyph.ruby   { background: linear-gradient(135deg, #ff8090, #a82838); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+      .face-title {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+      .face-title.sepia  { color: rgba(228,184,120,0.65); }
+      .face-title.indigo { color: rgba(150,160,255,0.65); }
+      .face-title.ruby   { color: rgba(255,128,144,0.65); }
+
+      .face-desc {
+        font-size: 13px;
+        color: rgba(237,232,224,0.50);
+        line-height: 1.72;
+        margin-bottom: 1.25rem;
+      }
+      .face-examples {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .face-chip {
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-style: italic;
+        font-family: var(--font-serif);
+        color: #f0e4c0;
+      }
+      .face-chip.sepia  { background: rgba(196,128,42,0.12); border: 1px solid rgba(196,128,42,0.22); }
+      .face-chip.indigo { background: rgba(56,64,168,0.12);  border: 1px solid rgba(56,64,168,0.22); }
+      .face-chip.ruby   { background: rgba(168,40,56,0.12);  border: 1px solid rgba(168,40,56,0.22); }
+
+      /* ── Feature Cards ── */
+      .features-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .feature-card {
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        background: rgba(12,10,8,0.78);
+        border: 1px solid rgba(196,128,42,0.13);
+        backdrop-filter: blur(16px);
+        transition: all 0.30s;
+        position: relative;
+        overflow: hidden;
+      }
+      .feature-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(196,128,42,0.42), rgba(168,40,56,0.38), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .feature-card:hover::after { opacity: 1; }
+      .feature-card:hover {
+        border-color: rgba(228,184,120,0.28);
+        transform: translateY(-4px);
+        box-shadow: 0 18px 52px rgba(196,128,42,0.09);
+      }
+      .feature-icon { font-size: 30px; margin-bottom: 1.25rem; display: block; }
+      .feature-title {
+        font-family: var(--font-display);
+        font-size: 14px;
+        font-weight: 700;
+        color: #e4b878;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+      .feature-desc {
+        font-size: 13px;
+        color: rgba(237,232,224,0.48);
+        line-height: 1.75;
+      }
+
+      /* ── Etymology Timeline ── */
+      .etymology-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .etym-timeline {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-top: 3rem;
+      }
+      .etym-timeline::before {
+        content: '';
+        position: absolute;
+        left: 9px; top: 0; bottom: 0;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(196,128,42,0.45) 15%, rgba(168,40,56,0.35) 55%, rgba(56,64,168,0.30) 85%, transparent);
+      }
+      .etym-step { position: relative; margin-bottom: 2.75rem; }
+      .etym-step::before {
+        content: '';
+        position: absolute;
+        left: -2.1rem; top: 5px;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c4802a, #a82838);
+        box-shadow: 0 0 14px rgba(196,128,42,0.52);
+      }
+      .etym-era {
+        font-size: 10px;
+        color: #c4802a;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+      }
+      .etym-form {
+        font-family: var(--font-serif);
+        font-size: 24px;
+        font-style: italic;
+        color: #f0e4c0;
+        margin-bottom: 0.4rem;
+      }
+      .etym-note {
+        font-size: 13px;
+        color: rgba(237,232,224,0.42);
+        line-height: 1.72;
+      }
+
+      /* ── Word Gallery ── */
+      .gallery-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      .gallery-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 14px;
+        background: rgba(12,10,8,0.84);
+        text-align: center;
+        transition: all 0.25s;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+      .gallery-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+      .gallery-card.adj-card  { border: 1px solid rgba(196,128,42,0.11); }
+      .gallery-card.noun-card { border: 1px solid rgba(56,64,168,0.11); }
+      .gallery-card.place-card{ border: 1px solid rgba(168,40,56,0.11); }
+      .gallery-card.adj-card::before   { background: linear-gradient(90deg, transparent, rgba(196,128,42,0.55), transparent); }
+      .gallery-card.noun-card::before  { background: linear-gradient(90deg, transparent, rgba(56,64,168,0.55), transparent); }
+      .gallery-card.place-card::before { background: linear-gradient(90deg, transparent, rgba(168,40,56,0.55), transparent); }
+      .gallery-card:hover::before { opacity: 1; }
+      .gallery-card.adj-card:hover   { border-color:rgba(196,128,42,0.35); background:rgba(196,128,42,0.07); transform:translateY(-3px); }
+      .gallery-card.noun-card:hover  { border-color:rgba(56,64,168,0.35);  background:rgba(56,64,168,0.07);  transform:translateY(-3px); }
+      .gallery-card.place-card:hover { border-color:rgba(168,40,56,0.35);  background:rgba(168,40,56,0.07);  transform:translateY(-3px); }
+
+      .gallery-word {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-style: italic;
+        color: #f0e4c0;
+        margin-bottom: 0.35rem;
+      }
+      .gallery-pos {
+        font-size: 9px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+      }
+      .gallery-card.adj-card   .gallery-pos { color: rgba(196,128,42,0.55); }
+      .gallery-card.noun-card  .gallery-pos { color: rgba(104,120,240,0.55); }
+      .gallery-card.place-card .gallery-pos { color: rgba(240,72,96,0.55); }
+      .gallery-gloss {
+        font-size: 10px;
+        color: rgba(237,232,224,0.36);
+        letter-spacing: 0.03em;
+        line-height: 1.4;
+      }
+
+      /* ── Codex Box ── */
+      .codex-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .codex-box {
+        padding: 2.5rem 3rem;
+        border-radius: 20px;
+        background: rgba(196,128,42,0.055);
+        border: 1px solid rgba(196,128,42,0.22);
+        backdrop-filter: blur(20px);
+        position: relative;
+        overflow: hidden;
+      }
+      .codex-box::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(196,128,42,0.62), rgba(168,40,56,0.45), rgba(56,64,168,0.35), transparent);
+      }
+      .codex-header {
+        font-size: 10px;
+        color: rgba(196,128,42,0.50);
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+      .codex-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(196,128,42,0.08);
+        font-size: 13px;
+      }
+      .codex-row:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+      .codex-key {
+        color: rgba(228,184,120,0.58);
+        letter-spacing: 0.08em;
+        min-width: 150px;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+      .codex-val { color: rgba(237,232,224,0.70); line-height: 1.62; }
+      .codex-val em { color: #e4b878; font-style: normal; font-weight: 600; }
+
+      /* ── Suffix Series ── */
+      .series-section {
+        position: relative;
+        z-index: 10;
+        padding: 4rem 2rem;
+        max-width: 1060px;
+        margin: 0 auto;
+      }
+      .series-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.9rem;
+        margin-top: 2.5rem;
+      }
+      .series-card {
+        padding: 1.5rem 0.9rem;
+        border-radius: 14px;
+        background: rgba(12,10,8,0.78);
+        border: 1px solid rgba(196,128,42,0.11);
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .series-card.active {
+        border-color: rgba(196,128,42,0.44);
+        background: rgba(196,128,42,0.08);
+        box-shadow: 0 8px 28px rgba(196,128,42,0.12);
+      }
+      .series-suffix {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.4rem;
+        background: linear-gradient(135deg, #d49a50, #a82838);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .series-card.active .series-suffix {
+        background: linear-gradient(135deg, #f0e4c0, #e4b878);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .series-pos   { font-size: 9px;  color:rgba(228,184,120,0.34); letter-spacing:0.10em; text-transform:uppercase; margin-bottom:0.3rem; }
+      .series-meaning { font-size: 9px;  color:rgba(237,232,224,0.34); line-height:1.45; margin-bottom:0.3rem; }
+      .series-example { font-size: 9px;  color:rgba(228,184,120,0.48); font-style:italic; }
+      .series-domain  { margin-top:0.55rem; font-size:8.5px; color:rgba(196,128,42,0.34); letter-spacing:0.10em; }
+
+      /* ── Origin ── */
+      .origin-section {
+        position: relative;
+        z-index: 10;
+        padding: 6rem 2rem;
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .origin-glyph {
+        font-size: 88px;
+        line-height: 1;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        font-family: var(--font-display);
+        letter-spacing: 0.04em;
+        background: linear-gradient(135deg, #d49a50 0%, #c4802a 35%, #a82838 65%, #3840a8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: glyphScroll 5s ease-in-out infinite;
+      }
+      @keyframes glyphScroll {
+        0%,100% { filter: brightness(1);   opacity: 0.88; }
+        50%      { filter: brightness(1.28); opacity: 1.00; }
+      }
+      .origin-title {
+        font-family: var(--font-serif);
+        font-size: clamp(26px, 4vw, 44px);
+        font-style: italic;
+        color: #f0e4c0;
+        margin-bottom: 1.5rem;
+        line-height: 1.28;
+      }
+      .origin-body {
+        font-size: 15px;
+        color: rgba(237,232,224,0.46);
+        line-height: 1.90;
+        max-width: 630px;
+        margin: 0 auto 2.5rem;
+      }
+
+      /* ── Contact ── */
+      .contact-section {
+        position: relative;
+        z-index: 10;
+        padding: 6rem 2rem;
+        text-align: center;
+      }
+      .contact-title {
+        font-family: var(--font-display);
+        font-size: clamp(30px, 5vw, 58px);
+        font-weight: 700;
+        color: #f0e4c0;
+        margin-bottom: 1rem;
+        letter-spacing: 0.06em;
+      }
+      .contact-sub {
+        font-size: 14px;
+        color: rgba(237,232,224,0.34);
+        margin-bottom: 2.5rem;
+        max-width: 420px;
+        margin-left: auto; margin-right: auto;
+        line-height: 1.75;
+      }
+      .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 16px 42px;
+        border-radius: 32px;
+        background: linear-gradient(135deg, #c4802a 0%, #a82838 50%, #3840a8 100%);
+        color: #f8f0d8;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        transition: all 0.3s;
+        box-shadow: 0 4px 26px rgba(196,128,42,0.28);
+      }
+      .contact-email:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 44px rgba(168,40,56,0.36);
+      }
+
+      /* ── Footer ── */
+      .site-footer {
+        position: relative;
+        z-index: 10;
+        padding: 2rem;
+        text-align: center;
+        border-top: 1px solid rgba(196,128,42,0.10);
+        font-size: 11px;
+        color: rgba(237,232,224,0.20);
+        letter-spacing: 0.12em;
+      }
+
+      /* ── Fade-up ── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.72s ease, transform 0.72s ease;
+      }
+      .fade-up.visible { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="ary-canvas" class="ary-canvas"></canvas>
+  <div class="manuscript-grid"></div>
+  <div class="archive-overlay"></div>
+  <div class="vignette"></div>
+
+  <!-- ═══════════════════════════════
+       HEADER
+  ═══════════════════════════════ -->
+  <header class="site-header">
+    <a href="/" class="logo-mark">
+      <div class="logo-icon">ARY</div>
+      <span class="logo-text">ary.kr</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#belonging"  class="nav-link">Belonging</a>
+      <a href="#etymology"  class="nav-link">Etymology</a>
+      <a href="#gallery"    class="nav-link">Words</a>
+      <a href="#contact"    class="nav-link">Contact</a>
+    </nav>
+    <div class="domain-badge">suffix · -ary</div>
+  </header>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="hero-section">
+    <div class="hero-bg-text" aria-hidden="true">ARY</div>
+    <div class="seal-ring" aria-hidden="true"></div>
+
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      The Suffix of Belonging
+    </div>
+
+    <div class="hero-suffix">
+      <span class="dash">—</span>ary
+    </div>
+
+    <p class="hero-origin">PIE *-yo- · Latin -ārius/-āria/-ārium · Old French -aire · English -ary</p>
+
+    <p class="hero-meaning">
+      "Of, relating to, connected with — the suffix that creates adjectives, persons, and sanctuaries from a single root of belonging."
+    </p>
+
+    <p class="hero-quote">
+      No other English suffix is so architecturally ambitious.<br/>
+      -ary does not merely describe — it designates belonging, conjures persons,<br/>
+      and consecrates places, all from the same ancient Latin source.
+    </p>
+
+    <div class="hero-words">
+      <span class="word-pill crimson">visionary</span>
+      <span class="word-pill">extraordinary</span>
+      <span class="word-pill archive">legendary</span>
+      <span class="word-pill">revolutionary</span>
+      <span class="word-pill crimson">honorary</span>
+      <span class="word-pill archive">sanctuary</span>
+      <span class="word-pill">vocabulary</span>
+      <span class="word-pill crimson">literary</span>
+      <span class="word-pill">customary</span>
+      <span class="word-pill archive">library</span>
+      <span class="word-pill">documentary</span>
+      <span class="word-pill crimson">voluntary</span>
+      <span class="word-pill">elementary</span>
+      <span class="word-pill archive">planetary</span>
+      <span class="word-pill">imaginary</span>
+      <span class="word-pill crimson">sedentary</span>
+      <span class="word-pill">dictionary</span>
+      <span class="word-pill archive">diary</span>
+      <span class="word-pill">contemporary</span>
+      <span class="word-pill crimson">preliminary</span>
+    </div>
+
+    <a href="#contact" class="hero-cta">
+      Enter the Archive 📜
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════
+       STATS
+  ═══════════════════════════════ -->
+  <section class="stats-section">
+    <div class="stat-card fade-up">
+      <div class="stat-number">600+</div>
+      <div class="stat-label">-ary words in English</div>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="stat-number">3</div>
+      <div class="stat-label">grammatical faces</div>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="stat-number">*-yo-</div>
+      <div class="stat-label">PIE root suffix</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       THREE FACES OF -ARY
+  ═══════════════════════════════ -->
+  <section class="triple-section" id="belonging">
+    <p class="section-label">§ 01 · Three Faces of -ary</p>
+    <h2 class="section-title">One Suffix, Three Grammars</h2>
+    <p class="section-subtitle">Unlike any other suffix in this series, -ary operates across three distinct grammatical functions from the same Latin root.</p>
+
+    <div class="triple-grid">
+      <div class="face-card sepia fade-up">
+        <div class="face-pos sepia">Adjective</div>
+        <div class="face-glyph sepia">Adj</div>
+        <div class="face-title sepia">Relating To</div>
+        <p class="face-desc">-ary forms adjectives meaning "of, relating to, connected with." These are the most numerous -ary words — describing things by their relation to a concept, domain, or condition. The adjective of belonging.</p>
+        <div class="face-examples">
+          <span class="face-chip sepia">visionary</span>
+          <span class="face-chip sepia">legendary</span>
+          <span class="face-chip sepia">elementary</span>
+          <span class="face-chip sepia">customary</span>
+          <span class="face-chip sepia">voluntary</span>
+          <span class="face-chip sepia">planetary</span>
+        </div>
+      </div>
+      <div class="face-card indigo fade-up">
+        <div class="face-pos indigo">Person Noun</div>
+        <div class="face-glyph indigo">Nᴾ</div>
+        <div class="face-title indigo">The Person Engaged</div>
+        <p class="face-desc">-ary also forms nouns for persons whose role or function is defined by the base word — the person engaged in, or characterized by, that activity or condition. Latin -ārius was the original agent suffix.</p>
+        <div class="face-examples">
+          <span class="face-chip indigo">actuary</span>
+          <span class="face-chip indigo">notary</span>
+          <span class="face-chip indigo">secretary</span>
+          <span class="face-chip indigo">dignitary</span>
+          <span class="face-chip indigo">emissary</span>
+          <span class="face-chip indigo">luminary</span>
+        </div>
+      </div>
+      <div class="face-card ruby fade-up">
+        <div class="face-pos ruby">Place / Thing Noun</div>
+        <div class="face-glyph ruby">Nˡ</div>
+        <div class="face-title ruby">The Place or Collection</div>
+        <p class="face-desc">From Latin -ārium (neuter), -ary creates nouns for places, receptacles, or collections associated with the base word. The library holds books; the sanctuary holds the sacred; the vocabulary holds the words of a language.</p>
+        <div class="face-examples">
+          <span class="face-chip ruby">library</span>
+          <span class="face-chip ruby">sanctuary</span>
+          <span class="face-chip ruby">vocabulary</span>
+          <span class="face-chip ruby">dictionary</span>
+          <span class="face-chip ruby">granary</span>
+          <span class="face-chip ruby">rosary</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FEATURE CARDS
+  ═══════════════════════════════ -->
+  <section class="features-section">
+    <p class="section-label">§ 02 · Defining Properties</p>
+    <h2 class="section-title">The Architecture of -ary</h2>
+    <p class="section-subtitle">Three principles that make -ary the most structurally ambitious suffix in this collection.</p>
+
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <span class="feature-icon">📜</span>
+        <div class="feature-title">Dual Grammar</div>
+        <p class="feature-desc">-ary is the only suffix in this series that functions as both adjective and noun with complete regularity. This dual nature comes directly from Latin, where <em style="color:#e4b878;">-ārius</em> was both an adjective ending and the root of agent nouns — baked into a single inherited form.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <span class="feature-icon">🏛️</span>
+        <div class="feature-title">Formal Register</div>
+        <p class="feature-desc">-ary words occupy the formal registers of English — law (<em style="color:#e4b878;">notary, secretary</em>), science (<em style="color:#e4b878;">elementary, planetary</em>), literature (<em style="color:#e4b878;">literary, visionary</em>), and religion (<em style="color:#e4b878;">sanctuary, rosary</em>). The suffix carries the authority of Roman administration and the Church.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <span class="feature-icon">✦</span>
+        <div class="feature-title">Revolutionary Range</div>
+        <p class="feature-desc">From <em style="color:#e4b878;">extraordinary</em> to <em style="color:#e4b878;">elementary</em>, from <em style="color:#e4b878;">revolutionary</em> to <em style="color:#e4b878;">sedentary</em> — -ary spans extremes of register, scale, and domain. It is equally at home in the grandest abstractions and the most practical designations of everyday life.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ETYMOLOGY TIMELINE
+  ═══════════════════════════════ -->
+  <section class="etymology-section" id="etymology">
+    <p class="section-label" style="text-align:center;">§ 03 · Etymology</p>
+    <h2 class="section-title" style="font-size:clamp(24px,3.8vw,44px);margin-bottom:0;">From *-yo- to -ary</h2>
+
+    <div class="etym-timeline">
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Proto-Indo-European · c. 3500 BCE</div>
+        <div class="etym-form">*-yo- "of or belonging to"</div>
+        <div class="etym-note">
+          The deepest ancestor of -ary is the PIE relational adjective suffix <em>*-yo-</em>, one of the most productive and ancient patterns in the language family. It formed possessive and relational adjectives — "of X, belonging to X" — across Greek, Sanskrit, Latin, and the Germanic languages. This tiny suffix is the grammatical DNA shared by hundreds of modern words.
+        </div>
+      </div>
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Classical Latin · c. 200 BCE – 200 CE</div>
+        <div class="etym-form">-ārius / -āria / -ārium</div>
+        <div class="etym-note">
+          Latin developed the PIE suffix into three gendered forms. <em>-ārius</em> (masculine) designated "a man connected with" a thing — producing agent nouns like <em>actuārius</em> (records-keeper), <em>notārius</em> (shorthand writer), <em>secretārius</em> (one entrusted with secrets). <em>-āria</em> (feminine) and <em>-ārium</em> (neuter) formed places and collections: <em>librārium</em> (bookcase → library), <em>grānārium</em> (grain-store → granary), <em>vocabulārium</em> (word-collection → vocabulary).
+        </div>
+      </div>
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Late Latin & Church Latin · c. 300–700 CE</div>
+        <div class="etym-form">-ārius (highly productive)</div>
+        <div class="etym-note">
+          Church Latin and imperial administration made -ārius the standard suffix for office-holders and formal roles: <em>glossārium</em> (glossary), <em>sanctuārium</em> (holy place → sanctuary), <em>rosārium</em> (rose-garden → rosary). The suffix became attached to the architecture of religious and civic life across the whole Roman world, seeding its vocabulary into every successor language of Europe.
+        </div>
+      </div>
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Old French · c. 900–1200 CE</div>
+        <div class="etym-form">-aire / -arie</div>
+        <div class="etym-note">
+          Latin -ārius underwent the standard French vowel shift to become <em>-aire</em> in stressed positions (<em>notaire</em>, <em>secrétaire</em>) and <em>-arie</em> in unstressed endings. The Norman Conquest of 1066 introduced both forms to English, where they would eventually merge into the single spelling -ary. French legal and administrative vocabulary poured into English through this channel.
+        </div>
+      </div>
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Middle English · c. 1200–1500 CE</div>
+        <div class="etym-form">-arie → -ary (stabilised)</div>
+        <div class="etym-note">
+          By 1400 the Middle English spelling -ary had stabilised, absorbing both -aire and -arie. Key early adoptions: <em>library</em> (c. 1374), <em>secretary</em> (c. 1387), <em>sanctuary</em> (c. 1350), <em>notary</em> (c. 1300), <em>ordinary</em> (c. 1303), <em>contrary</em> (c. 1330), <em>necessary</em> (c. 1350). The suffix became the standard form for a whole class of formal, Latinate English words inherited through French.
+        </div>
+      </div>
+
+      <div class="etym-step fade-up">
+        <div class="etym-era">Modern English · 1500 CE → present</div>
+        <div class="etym-form">-ary (fully established)</div>
+        <div class="etym-note">
+          Modern English continued to coin -ary words at every register: <em>revolutionary</em> (1660s), <em>legendary</em> (c. 1510), <em>visionary</em> (1650s), <em>documentary</em> (1802), <em>inflationary</em> (1919), <em>evolutionary</em> (1836), <em>imaginary</em> (c. 1400), <em>extraordinary</em> (c. 1440). The suffix — still carrying the authority of three Latin genders and two millennia of usage — remains one of English's most recognisable formal word-endings.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       WORD GALLERY
+  ═══════════════════════════════ -->
+  <section class="gallery-section" id="gallery">
+    <p class="section-label">§ 04 · Word Gallery</p>
+    <h2 class="section-title" style="font-size:clamp(24px,3.8vw,44px);">Twenty Belongings</h2>
+    <p class="section-subtitle">Adjectives, persons, and places — the three grammatical lives of a single suffix, gathered in one archive.</p>
+
+    <div class="gallery-grid">
+      <!-- Adjectives: sepia -->
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">visionary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of vision; thinking ahead</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">legendary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of legend; mythically famous</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">revolutionary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of revolution; transformative</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">extraordinary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">beyond the ordinary order</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">honorary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of honour; for honour's sake</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">literary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of literature; in letters</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">planetary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of the planets; celestial</div>
+      </div>
+      <div class="gallery-card adj-card fade-up">
+        <div class="gallery-word">imaginary</div>
+        <div class="gallery-pos">adjective</div>
+        <div class="gallery-gloss">of imagination; not real</div>
+      </div>
+      <!-- Person nouns: indigo -->
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">secretary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">keeper of secrets/records</div>
+      </div>
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">actuary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">calculator of risk/records</div>
+      </div>
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">notary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">official witness of deeds</div>
+      </div>
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">dignitary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">person of high rank</div>
+      </div>
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">emissary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">one sent on a mission</div>
+      </div>
+      <div class="gallery-card noun-card fade-up">
+        <div class="gallery-word">luminary</div>
+        <div class="gallery-pos">person noun</div>
+        <div class="gallery-gloss">a person who inspires light</div>
+      </div>
+      <!-- Place/thing nouns: crimson -->
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">library</div>
+        <div class="gallery-pos">place noun</div>
+        <div class="gallery-gloss">place of books</div>
+      </div>
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">sanctuary</div>
+        <div class="gallery-pos">place noun</div>
+        <div class="gallery-gloss">place of the sacred</div>
+      </div>
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">vocabulary</div>
+        <div class="gallery-pos">collection noun</div>
+        <div class="gallery-gloss">collection of words</div>
+      </div>
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">dictionary</div>
+        <div class="gallery-pos">collection noun</div>
+        <div class="gallery-gloss">ordered collection of words</div>
+      </div>
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">granary</div>
+        <div class="gallery-pos">place noun</div>
+        <div class="gallery-gloss">storehouse for grain</div>
+      </div>
+      <div class="gallery-card place-card fade-up">
+        <div class="gallery-word">diary</div>
+        <div class="gallery-pos">thing noun</div>
+        <div class="gallery-gloss">record of the day's events</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CODEX BOX
+  ═══════════════════════════════ -->
+  <section class="codex-section">
+    <div class="codex-box fade-up">
+      <div class="codex-header">// Lexical Profile · ary.kr · A01–A05</div>
+      <div class="codex-row">
+        <span class="codex-key">suffix</span>
+        <span class="codex-val"><em>-ary</em> — adjective and noun-forming suffix; from Latin <em>-ārius</em> (m.), <em>-āria</em> (f.), <em>-ārium</em> (n.)</span>
+      </div>
+      <div class="codex-row">
+        <span class="codex-key">origin</span>
+        <span class="codex-val">PIE <em>*-yo-</em> → Latin <em>-ārius/-āria/-ārium</em> → Old French <em>-aire/-arie</em> → Middle English <em>-arie → -ary</em></span>
+      </div>
+      <div class="codex-row">
+        <span class="codex-key">function</span>
+        <span class="codex-val">Forms <em>adjectives</em> ("relating to"), <em>person nouns</em> ("the one engaged in"), and <em>place/collection nouns</em> ("the place/store of")</span>
+      </div>
+      <div class="codex-row">
+        <span class="codex-key">register</span>
+        <span class="codex-val"><em>Formal / Latinate</em> — law, science, religion, administration; also absorbed into literary and everyday formal speech</span>
+      </div>
+      <div class="codex-row">
+        <span class="codex-key">productivity</span>
+        <span class="codex-val"><em>High</em> — 600+ words; uniquely spans adjectives, agent nouns, and place nouns across three Latin gender origins within a single English form</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SUFFIX SERIES
+  ═══════════════════════════════ -->
+  <section class="series-section">
+    <p class="section-label" style="text-align:center;">§ 05 · Suffix Series</p>
+    <h2 class="section-title" style="font-size:clamp(22px,3.5vw,42px);margin-bottom:0.5rem;">The Language Collection</h2>
+    <p class="section-subtitle">Eight companion domains mapping the suffix landscape of English.</p>
+
+    <div class="series-grid">
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ous</div>
+        <div class="series-pos">adj</div>
+        <div class="series-meaning">full of / having</div>
+        <div class="series-example">glorious</div>
+        <div class="series-domain">ous.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ize</div>
+        <div class="series-pos">verb</div>
+        <div class="series-meaning">to make</div>
+        <div class="series-example">organize</div>
+        <div class="series-domain">ize.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ive</div>
+        <div class="series-pos">adj</div>
+        <div class="series-meaning">tending to</div>
+        <div class="series-example">creative</div>
+        <div class="series-domain">ive.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ity</div>
+        <div class="series-pos">noun</div>
+        <div class="series-meaning">state / quality</div>
+        <div class="series-example">clarity</div>
+        <div class="series-domain">ity.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ify</div>
+        <div class="series-pos">verb</div>
+        <div class="series-meaning">to cause to become</div>
+        <div class="series-example">clarify</div>
+        <div class="series-domain">ify.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ial</div>
+        <div class="series-pos">adj</div>
+        <div class="series-meaning">of / relating to</div>
+        <div class="series-example">celestial</div>
+        <div class="series-domain">ial.kr</div>
+      </div>
+      <div class="series-card fade-up">
+        <div class="series-suffix">-ful</div>
+        <div class="series-pos">adj</div>
+        <div class="series-meaning">full of / characterized</div>
+        <div class="series-example">beautiful</div>
+        <div class="series-domain">ful.kr</div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-top:0.9rem;">
+      <div class="series-card active fade-up" style="min-width:148px;max-width:190px;">
+        <div class="series-suffix">-ary</div>
+        <div class="series-pos">adj · noun</div>
+        <div class="series-meaning">of / relating to; person; place</div>
+        <div class="series-example">visionary</div>
+        <div class="series-domain">ary.kr · current</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ORIGIN NARRATIVE
+  ═══════════════════════════════ -->
+  <section class="origin-section">
+    <div class="origin-glyph fade-up">藏</div>
+    <h2 class="origin-title fade-up">
+      The Suffix That Built<br/>Libraries and Legends
+    </h2>
+    <p class="origin-body fade-up">
+      When Roman scribes needed a word for a bookcase, they called it a
+      <em style="color:#e4b878;">librārium</em> — a place belonging to the books.
+      When they named a man whose life was spent with shorthand tablets, they called him
+      <em style="color:#e4b878;">notārius</em> — the one belonging to notation.
+      When they consecrated a space for the sacred, they called it
+      <em style="color:#e4b878;">sanctuārium</em> — the place belonging to the holy.
+      One suffix — <em style="color:#f0e4c0;">-ārius/-āria/-ārium</em> — performed all three acts simultaneously,
+      in three grammatical genders, across the whole breadth of Roman civilisation.
+      Two thousand years later, we still carry that triple inheritance in English:
+      the <em style="color:#e4b878;">library</em> holds our books, the <em style="color:#e4b878;">secretary</em>
+      holds our secrets, the <em style="color:#e4b878;">visionary</em> holds the future in mind,
+      and the <em style="color:#e4b878;">sanctuary</em> holds whatever we most need to protect.
+      All four — a single Latin suffix, distilled across twenty centuries,
+      into the one syllable that names belonging itself.
+    </p>
+    <a href="#contact" class="hero-cta fade-up">
+      Inquire about ary.kr 📜
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CONTACT
+  ═══════════════════════════════ -->
+  <section class="contact-section" id="contact">
+    <h2 class="contact-title fade-up">Open the Archive</h2>
+    <p class="contact-sub fade-up">
+      Interested in ary.kr? Domain inquiries,<br/>collaborations, and language projects welcome.
+    </p>
+    <a href="mailto:hello@ary.kr" class="contact-email fade-up">
+      📜 hello@ary.kr
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+  <footer class="site-footer">
+    © 2026 ary.kr · The Suffix of Belonging · *-yo- → -ārius/-āria/-ārium → -aire/-arie → -ary
+  </footer>
+
+
+  <!-- ═══════════════════════════════
+       PARTICLE SYSTEM
+  ═══════════════════════════════ -->
+  <script>
+  (function () {
+    'use strict';
+
+    const canvas = document.getElementById('ary-canvas');
+    const ctx    = canvas.getContext('2d');
+
+    /* ── Palette ── */
+    const SEPIA   = '#c4802a';
+    const ARCHIVE = '#3840a8';
+    const CRIMSON = '#a82838';
+    const VELLUM  = 'rgba(240,228,192,0.75)';
+    const GOLD    = '#d49a50';
+
+    let W, H;
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    /* ════════════════════════════════
+       Layer 1 · ManuscriptMote
+       Slowly drifting ink-dust motes
+    ════════════════════════════════ */
+    class ManuscriptMote {
+      constructor() { this.reset(true); }
+      reset(init) {
+        this.x      = Math.random() * W;
+        this.y      = init ? Math.random() * H : H + 8;
+        this.vx     = (Math.random() - 0.5) * 0.28;
+        this.vy     = -(0.10 + Math.random() * 0.22);
+        this.r      = 0.8 + Math.random() * 2.5;
+        this.alpha  = 0;
+        this.peak   = 0.20 + Math.random() * 0.32;
+        this.flicker= Math.random() * Math.PI * 2;
+        this.fSpeed = 0.022 + Math.random() * 0.030;
+        const C     = [SEPIA, ARCHIVE, CRIMSON, GOLD, VELLUM];
+        this.col    = C[Math.floor(Math.random() * C.length)];
+        this.lifeMax= 200 + Math.random() * 150;
+        this.life   = init ? Math.random() * this.lifeMax : 0;
+      }
+      update() {
+        this.life++;
+        this.flicker += this.fSpeed;
+        this.x += this.vx;
+        this.y += this.vy;
+        const t  = this.life / this.lifeMax;
+        const fl = 0.88 + Math.sin(this.flicker) * 0.12;
+        if (t < 0.14)      this.alpha = (t / 0.14) * this.peak * fl;
+        else if (t < 0.72) this.alpha = this.peak * fl;
+        else               this.alpha = this.peak * fl * (1 - (t - 0.72) / 0.28);
+        if (this.life >= this.lifeMax || this.y < -10) this.reset(false);
+      }
+      draw() {
+        if (this.alpha <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle   = this.col;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    /* ════════════════════════════════
+       Layer 2 · ScrollWord
+       Floating -ary words like
+       manuscript fragments
+    ════════════════════════════════ */
+    const ARY_WORDS = [
+      'visionary','revolutionary','legendary','extraordinary',
+      'honorary','sanctuary','vocabulary','literary',
+      'customary','library','documentary','voluntary',
+      'elementary','planetary','imaginary','sedentary',
+      'dictionary','diary','contemporary','preliminary',
+      'secretary','notary','actuary','dignitary',
+      'emissary','luminary','boundary','glossary',
+      'complementary','cautionary'
+    ];
+    class ScrollWord {
+      constructor() { this.reset(true); }
+      reset(init) {
+        this.x    = Math.random() * W;
+        this.y    = init ? Math.random() * H : H + 30;
+        this.vy   = -(0.12 + Math.random() * 0.22);
+        this.vx   = (Math.random() - 0.5) * 0.14;
+        this.word = ARY_WORDS[Math.floor(Math.random() * ARY_WORDS.length)];
+        this.size = 10 + Math.random() * 5;
+        this.alpha= 0;
+        this.peak = 0.10 + Math.random() * 0.11;
+        const C   = [SEPIA, ARCHIVE, CRIMSON, GOLD, VELLUM];
+        this.col  = C[Math.floor(Math.random() * C.length)];
+      }
+      update() {
+        this.x += this.vx; this.y += this.vy;
+        this.alpha = Math.min(this.alpha + 0.0038, this.peak);
+        if (this.y < -42) this.reset(false);
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.fillStyle   = this.col;
+        ctx.font        = `italic ${this.size}px "IM Fell English", Georgia, serif`;
+        ctx.fillText(this.word, this.x, this.y);
+        ctx.restore();
+      }
+    }
+
+    /* ════════════════════════════════
+       Layer 3 · InkLine
+       Short horizontal ink strokes —
+       like manuscript underlines
+    ════════════════════════════════ */
+    class InkLine {
+      constructor() { this.reset(true); }
+      reset(init) {
+        this.x    = Math.random() * W;
+        this.y    = init ? Math.random() * H : H + 4;
+        this.vy   = -(0.08 + Math.random() * 0.16);
+        this.vx   = (Math.random() - 0.5) * 0.22;
+        this.len  = 8 + Math.random() * 22;
+        this.angle= (Math.random() - 0.5) * 0.35;
+        this.alpha= 0;
+        this.peak = 0.10 + Math.random() * 0.14;
+        const C   = [SEPIA, GOLD, ARCHIVE, CRIMSON];
+        this.col  = C[Math.floor(Math.random() * C.length)];
+      }
+      update() {
+        this.x += this.vx; this.y += this.vy;
+        this.alpha = Math.min(this.alpha + 0.005, this.peak);
+        if (this.y < -6) this.reset(false);
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.strokeStyle = this.col;
+        ctx.lineWidth   = 0.8;
+        ctx.lineCap     = 'round';
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.beginPath();
+        ctx.moveTo(-this.len / 2, 0);
+        ctx.lineTo( this.len / 2, 0);
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    /* ════════════════════════════════
+       Layer 4 · ArchiveRing
+       Slow concentric archive rings —
+       like wax seal impressions
+    ════════════════════════════════ */
+    class ArchiveRing {
+      constructor() { this.reset(true); }
+      reset(init) {
+        this.x    = Math.random() * W;
+        this.y    = Math.random() * H;
+        this.r    = 12 + Math.random() * 32;
+        this.maxR = this.r + 40 + Math.random() * 52;
+        this.dr   = 0.16 + Math.random() * 0.26;
+        this.baseA= 0.12 + Math.random() * 0.10;
+        const C   = [SEPIA, CRIMSON, ARCHIVE];
+        this.col  = C[Math.floor(Math.random() * C.length)];
+        if (init) this.r = Math.random() * this.maxR;
+      }
+      update() {
+        this.r += this.dr;
+        if (this.r > this.maxR) this.reset(false);
+      }
+      draw() {
+        const life = 1 - (this.r - 12) / (this.maxR - 12);
+        ctx.save();
+        ctx.globalAlpha = this.baseA * life;
+        ctx.strokeStyle = this.col;
+        ctx.lineWidth   = 1;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    /* ── Pools ── */
+    const motes  = Array.from({ length: 65 }, () => new ManuscriptMote());
+    const words  = Array.from({ length: 24 }, () => new ScrollWord());
+    const lines  = Array.from({ length: 32 }, () => new InkLine());
+    const rings  = Array.from({ length: 10 }, () => new ArchiveRing());
+
+    /* ── Loop ── */
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      rings.forEach(p => { p.update(); p.draw(); });
+      lines.forEach(p => { p.update(); p.draw(); });
+      motes.forEach(p => { p.update(); p.draw(); });
+      words.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    /* ── Scroll fade-up ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  })();
+  </script>
+
+</body>
+</html>
